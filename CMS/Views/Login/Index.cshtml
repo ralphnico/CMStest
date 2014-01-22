@@ -1,0 +1,22 @@
+﻿@model CMS.Models.User
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<script src="@Url.Content("~/Scripts/jquery.validation.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(m => m.username)
+    @Html.TextBoxFor(m => m.username)
+    @Html.ValidationMessageFor(m => m.username)
+    <br />
+    @Html.LabelFor(m => m.password)
+    @Html.PasswordFor(m => m.password)
+    @Html.ValidationMessageFor(m => m.password)
+    <br />
+    <input type="submit" />
+    @Html.ValidationSummary()
+}
